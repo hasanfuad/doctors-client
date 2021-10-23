@@ -1,0 +1,15 @@
+.header-container {
+  height: 48.5rem;
+  position: relative;
+  background-image: url("../../../../images/chair-bg.png");
+}
+.header-container::after {
+  height: 700px;
+  content: " ";
+  position: absolute;
+  top: 0;
+  width: 24%;
+  right: 0;
+  background-color: #3d4558;
+  z-index: -1;
+}
