@@ -19,7 +19,9 @@ const HeaderMain = () => {
             fugit itaque quasi voluptatibus ipsam quia, magnam totam recusandae?
             Eum, tempore?
           </p>
-          <button className="btn btn-primary mt-4">Get Appointment</button>
+          <button className="btn btn-primary main-button mt-4">
+            Get Appointment
+          </button>
         </div>
         <div className="col-md-7">
           <img

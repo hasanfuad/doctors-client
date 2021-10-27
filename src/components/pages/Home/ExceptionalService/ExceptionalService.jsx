@@ -27,7 +27,9 @@ const ExceptionalService = () => {
               odit. natus aut. Quas eaque placeat expedita quis odit.
             </small>
           </div>
-          <button className="mt-5 btn btn-primary">Learn More</button>
+          <button className="mt-5 btn main-button btn-primary">
+            Learn More
+          </button>
         </div>
       </div>
     </section>
