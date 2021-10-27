@@ -29,7 +29,7 @@ const Testimonial = () => {
   return (
     <section
       className="container testimonialContainer"
-      style={{ height: "700px" }}
+      style={{ height: "600px" }}
     >
       <div className="mt-5">
         <h6 style={{ color: "#14d1ca", fontWeight: "bold" }}>TESTIMONIAL</h6>

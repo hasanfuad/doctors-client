@@ -3,6 +3,8 @@
   position: relative;
   height: 420px;
   background-position: center;
+  z-index: 1;
+  color: white;
 }
 
 .make-appointment::before {
@@ -13,7 +15,8 @@
   position: absolute;
   background: rgb(36, 41, 73);
   top: 0;
-  opacity: 0.8;
+  opacity: 0.9;
+  z-index: -1;
 }
 
 .make-appointment img {

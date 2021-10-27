@@ -1,3 +1,6 @@
-/* .testimonialContainer{
-    background-image: url(../../../images/)
-} */
+.testimonialContainer {
+  background-image: url(../../../images/quote.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 180px;
+}
