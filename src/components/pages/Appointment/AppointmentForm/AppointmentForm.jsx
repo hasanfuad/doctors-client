@@ -36,12 +36,131 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
         contentLabel="Example Modal"
       >
         <h5 className="text-brand">{appointmentOn.subject}</h5>
-        <form onSubmit={handleSubmit()}>
-          <input defaultValue="name" {...register("example")} />
+        {/* <form onSubmit={handleSubmit()}>
+          <input
+            defaultValue="name"
+            {...register("name", { required: true })}
+            className="w-75 p-1 mt-4"
+          />
           <br />
-          <input {...register("exampleRequired", { required: true })} />
+          <input
+            defaultValue="phone"
+            {...register("phone", { required: true })}
+            className="w-75 p-1 mt-4"
+          />
           <br />
-          <input type="submit" />
+          <input
+            defaultValue="email"
+            {...register("email", { required: true })}
+            className="w-75 p-1 mt-4"
+          />
+          <br />
+          <select className="form-control" name="gender">
+            <option disabled={true} value="Not set">
+              Select Gender
+            </option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Not set">Other</option>
+          </select>
+          <input
+            type="number"
+            className="w-25 p-1"
+            placeholder="Your Age"
+            name=""
+            id=""
+          />
+          <input
+            type="number"
+            className="w-25 p-1 mx-2"
+            name=""
+            placeholder="Your weight"
+            id=""
+          />
+          <br />
+          <input
+            className="mt-4 px-5 p-1 main-button text-white"
+            type="submit"
+          />
+        </form> */}
+        <form className="p-5" onSubmit={handleSubmit()}>
+          <div className="form-group">
+            <input
+              type="text"
+              defaultValue="name"
+              {...register("name", { required: true })}
+              placeholder="Your Name"
+              className="form-control"
+            />
+            {errors.name && (
+              <span className="text-danger">This field is required</span>
+            )}
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              defaultValue="phone"
+              {...register("phone", { required: true })}
+              placeholder="Phone Number"
+              className="form-control mt-4"
+            />
+            {errors.phone && (
+              <span className="text-danger">This field is required</span>
+            )}
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              defaultValue="email"
+              {...register("email", { required: true })}
+              placeholder="Email"
+              className="form-control mt-4"
+            />
+            {errors.email && (
+              <span className="text-danger">This field is required</span>
+            )}
+          </div>
+          <div className="form-group row">
+            <div className="col-4">
+              <select
+                className="form-control mt-4"
+                {...register("gender", { required: true })}
+              >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Not set">Other</option>
+              </select>
+              {errors.gender && (
+                <span className="text-danger">This field is required</span>
+              )}
+            </div>
+            <div className="col-4">
+              <input
+                defaultValue="name"
+                {...register("name", { required: true })}
+                className="form-control mt-4"
+                name="age"
+                placeholder="Your Age"
+                type="number"
+              />
+            </div>
+            <div className="col-4">
+              <input
+                defaultValue="name"
+                {...register("name", { required: true })}
+                className="form-control mt-4"
+                name="weight"
+                placeholder="Weight"
+                type="number"
+              />
+            </div>
+          </div>
+
+          <div className="form-group text-right">
+            <button type="submit" className="btn main-button mt-5 text-white">
+              Submit
+            </button>
+          </div>
         </form>
       </Modal>
     </div>
