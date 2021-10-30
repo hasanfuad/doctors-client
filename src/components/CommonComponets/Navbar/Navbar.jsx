@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <div style={{ marginRight: "100px" }}>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container-fluid">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -15,55 +16,39 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link ms-5 active"
-                  aria-current="page"
-                  href="/home"
-                >
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link ms-5 active" to="/home">
                   Home
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ms-5" aria-current="page" href="/about">
+              <li className="nav-item">
+                <Link className="nav-link ms-5" to="/about">
                   About
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ms-5" aria-current="page" href="/services">
+              <li className="nav-item">
+                <Link className="nav-link ms-5" to="/services">
                   Dental Services
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link ms-5 text-white"
-                  aria-current="page"
-                  href="/reviews"
-                >
+              <li className="nav-item">
+                <Link className="nav-link ms-5 text-white" to="/reviews">
                   Reviews
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link ms-5 text-white"
-                  aria-current="page"
-                  href="/blog"
-                >
+                <Link className="nav-link ms-5 text-white" to="/blog">
                   Blog
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link ms-5 text-white"
-                  aria-current="page"
-                  href="/contact"
-                >
+                <Link className="nav-link ms-5 text-white" to="/contact">
                   Contact us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

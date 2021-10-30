@@ -1,22 +1,33 @@
-import React from "react";
-import {
-  BrowserRouter as Router, Route, Switch
-} from "react-router-dom";
+import React, { createContext, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Appointment from "./components/pages/Appointment/Appointment/Appointment";
 import Home from "./components/pages/Home/Home/Home";
+import Login from "./components/pages/Login/Login/Login";
+import PrivateRoute from "./components/pages/Login/Login/PrivateRoute/PrivateRoute";
+
+export const UserContext = createContext();
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState([]);
   return (
-    <Router>
-      <Switch>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      {/* <p>Email: {loggedInUser.email}</p> */}
+      <Router>
+        <Switch>
           <Route exact path="/">
-            <Home/>
+            <Home />
           </Route>
-          <Route path="/appointment">
-            <Appointment/>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <PrivateRoute path="/appointment">
+            <Appointment />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
           </Route>
         </Switch>
-
-    </Router>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

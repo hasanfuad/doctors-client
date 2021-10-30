@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import chair from "../../../../../images/Chair.png";
 import "./HeaderMain.css";
 const HeaderMain = () => {
@@ -19,9 +20,9 @@ const HeaderMain = () => {
             fugit itaque quasi voluptatibus ipsam quia, magnam totam recusandae?
             Eum, tempore?
           </p>
-          <button className="btn btn-primary main-button mt-4">
+          <Link className="btn btn-primary main-button" to="/appointment">
             Get Appointment
-          </button>
+          </Link>
         </div>
         <div className="col-md-7">
           <img
