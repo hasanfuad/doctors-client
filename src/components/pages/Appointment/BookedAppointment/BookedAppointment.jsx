@@ -56,7 +56,7 @@ const BookedAppointment = ({ bookedAppointment }) => {
             <BookingCard
               key={bookingData._id}
               bookingData={bookingData}
-              // date={bookedAppointment}
+              date={bookedAppointment}
             />
           ))}
         </div>

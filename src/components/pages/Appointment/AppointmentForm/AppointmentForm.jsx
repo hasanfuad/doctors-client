@@ -18,13 +18,15 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
-  const handleSubmit = () => {
-    console.log("Click on handle submit");
+const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
+  const onSubmit = (data) => {
+    console.log(data);
+    closeModal();
   };
   const {
     register,
     watch,
+    handleSubmit,
     formState: { errors },
   } = useForm();
   return (
@@ -36,54 +38,11 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
         contentLabel="Example Modal"
       >
         <h5 className="text-brand">{appointmentOn.subject}</h5>
-        {/* <form onSubmit={handleSubmit()}>
-          <input
-            defaultValue="name"
-            {...register("name", { required: true })}
-            className="w-75 p-1 mt-4"
-          />
-          <br />
-          <input
-            defaultValue="phone"
-            {...register("phone", { required: true })}
-            className="w-75 p-1 mt-4"
-          />
-          <br />
-          <input
-            defaultValue="email"
-            {...register("email", { required: true })}
-            className="w-75 p-1 mt-4"
-          />
-          <br />
-          <select className="form-control" name="gender">
-            <option disabled={true} value="Not set">
-              Select Gender
-            </option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Not set">Other</option>
-          </select>
-          <input
-            type="number"
-            className="w-25 p-1"
-            placeholder="Your Age"
-            name=""
-            id=""
-          />
-          <input
-            type="number"
-            className="w-25 p-1 mx-2"
-            name=""
-            placeholder="Your weight"
-            id=""
-          />
-          <br />
-          <input
-            className="mt-4 px-5 p-1 main-button text-white"
-            type="submit"
-          />
-        </form> */}
-        <form className="p-5" onSubmit={handleSubmit()}>
+
+        <small className="text-center text-secondary">
+          ON: {date.toDateString()}
+        </small>
+        <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
             <input
               type="text"
@@ -136,8 +95,8 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
             </div>
             <div className="col-4">
               <input
-                defaultValue="name"
-                {...register("name", { required: true })}
+                defaultValue="age"
+                {...register("age", { required: true })}
                 className="form-control mt-4"
                 name="age"
                 placeholder="Your Age"
@@ -146,8 +105,8 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
             </div>
             <div className="col-4">
               <input
-                defaultValue="name"
-                {...register("name", { required: true })}
+                defaultValue="weight"
+                {...register("weight", { required: true })}
                 className="form-control mt-4"
                 name="weight"
                 placeholder="Weight"
