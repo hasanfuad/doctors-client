@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Appointment from "./components/pages/Appointment/Appointment/Appointment";
+import Dashboard from "./components/pages/Dashboard/Dashboard/Dashboard";
 import Home from "./components/pages/Home/Home/Home";
 import Login from "./components/pages/Login/Login/Login";
 import PrivateRoute from "./components/pages/Login/Login/PrivateRoute/PrivateRoute";
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <PrivateRoute path="/appointment">
             <Appointment />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/appointment">
+            <Dashboard/>
           </PrivateRoute>
           <Route path="/login">
             <Login />
