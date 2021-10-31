@@ -6,15 +6,24 @@ import Sidebar from "../Sidebar/Sidebar";
 
 const Dashboard = () => {
   const styles = {
-    backgroundColor: "lightgray",
+    backgroundColor: "#F4FDFB",
     height: "100%",
     padding: "20px",
   };
 
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [appointment, setAppointment] = useState([]);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
+
+    fetch("http://localhost:5000/appointmentByDate", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ date }),
+    })
+      .then((res) => res.json())
+      .then((data) => setAppointment(data));
   };
   return (
     <section>
@@ -31,7 +40,7 @@ const Dashboard = () => {
           />
         </div>
         <div className="col-md-5">
-          <DashboardMain />
+          <DashboardMain appointment={appointment} />
         </div>
       </div>
     </section>

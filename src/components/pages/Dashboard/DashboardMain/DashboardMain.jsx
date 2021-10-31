@@ -1,9 +1,12 @@
 import React from "react";
 
-const DashboardMain = () => {
+const DashboardMain = ({ appointment }) => {
   return (
     <div>
-      <h1>Dashboard Main Appointment by date</h1>
+      <h1>Appointment taken on: {appointment.length}</h1>
+      {appointment.map((appt) => (
+        <li>{appt.name}</li>
+      ))}
     </div>
   );
 };
