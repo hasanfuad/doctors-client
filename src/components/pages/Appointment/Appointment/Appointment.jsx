@@ -10,7 +10,7 @@ const Appointment = () => {
     setSelectedDate(date);
   };
   return (
-    <section>
+    <section style={{ backgroundColor: "#E2E4E4" }}>
       <Navbar />
       <AppointmentHeader handleDateChange={handleDateChange} />
       <BookedAppointment bookedAppointment={selectedDate} />
