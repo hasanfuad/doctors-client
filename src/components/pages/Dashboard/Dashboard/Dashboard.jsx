@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import DashboardMain from "../DashboardMain/DashboardMain";
@@ -16,15 +16,17 @@ const Dashboard = () => {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
+  };
 
+  useEffect(() => {
     fetch("http://localhost:5000/appointmentByDate", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ date }),
+      body: JSON.stringify({ date: selectedDate }),
     })
       .then((res) => res.json())
       .then((data) => setAppointment(data));
-  };
+  }, [selectedDate]);
   return (
     <section>
       <div style={styles} className="container-fluid row">
