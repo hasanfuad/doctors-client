@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Appointment from "./components/pages/Appointment/Appointment/Appointment";
 import Dashboard from "./components/pages/Dashboard/Dashboard/Dashboard";
+import DisplayPatient from "./components/pages/Dashboard/Sidebar/DisplayPatient/DisplayPatient";
 import Home from "./components/pages/Home/Home/Home";
 import Login from "./components/pages/Login/Login/Login";
 import PrivateRoute from "./components/pages/Login/Login/PrivateRoute/PrivateRoute";
@@ -25,6 +26,9 @@ function App() {
           </PrivateRoute>
           <Route path="/dashboard/appointment">
             <Dashboard/>
+          </Route>
+          <Route path="/doctor/appointment">
+            <DisplayPatient/>
           </Route>
           <Route path="/login">
             <Login />
