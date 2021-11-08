@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Sidebar from "../Sidebar";
 import DisplayPatientInfo from "./DisplayPatientInfo/DisplayPatientInfo";
 
 const DisplayPatient = () => {
@@ -12,6 +13,9 @@ const DisplayPatient = () => {
     <main className="text-center">
       <div className="text-center mt-4 text-secondary">
         <h2>Appointed All Patients</h2>
+      </div>
+      <div>
+        <Sidebar />
       </div>
       <div className="text-center d-flex justify-content-center mt-4">
         <DisplayPatientInfo appointmentInfo={appointmentInfo} />
