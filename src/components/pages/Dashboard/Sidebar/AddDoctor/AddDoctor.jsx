@@ -18,6 +18,25 @@ const AddDoctor = () => {
     console.log(newFile);
   };
 
+  const handleSubmit = () => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("name", info.name);
+    formData.append("email", info.email);
+
+    fetch("http://localhost:5000/addDoctor", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   const styles = {
     backgroundColor: "#F4FDFB",
     height: "100%",
@@ -31,7 +50,7 @@ const AddDoctor = () => {
           <Sidebar />
         </div>
         <div className="col-md-5">
-          <form className="p-5">
+          <form onSubmit={handleSubmit} className="p-5">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
