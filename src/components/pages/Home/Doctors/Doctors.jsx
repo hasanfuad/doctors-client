@@ -10,7 +10,11 @@ const Doctors = () => {
       </div>
       <div className="container d-flex mt-5">
         <div>
-          <img className="w-75 doctor-image" src={doctor} alt="" />
+          <img
+            className="w-75 doctor-image"
+            src={`http://localhost:5000/${doctor}`}
+            alt=""
+          />
           <div className="mx-5 px-5 mt-4">
             <h6>Dr. Mofiz</h6>
             <p>+123-23422</p>
